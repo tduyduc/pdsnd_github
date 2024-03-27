@@ -14,8 +14,25 @@ An interactive environment where you can view bike share data insights for a few
 
 ### Files used
 
-Include the files used
+- `bikeshare.py`
+- `chicago.csv`
+- `new_york_city.csv`
+- `washington.csv`
 
-### Credits
+### References
 
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+- General Python coding
+  - [Prevent pycodestyle linter from complaining long docstrings](https://github.com/PyCQA/pycodestyle/issues/224)
+  - [Type annotation (this was intentional, given my Java and TypeScript programming background which prefers explicit, static typing)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
+- Pandas
+  - [Indexing with a lambda expression](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#selection-by-callable)
+  - [What if I forget to convert data to Timestamp](https://stackoverflow.com/questions/33365055/attributeerror-can-only-use-dt-accessor-with-datetimelike-values)
+  - [Get month from series data's timestamp](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.month.html)
+  - [Map a column](https://stackoverflow.com/questions/43356704/map-dataframe-index-using-dictionary)
+  - [Group by for counting](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.groupby.html)
+  - [Convert time difference to seconds](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.total_seconds.html)
+  - [Find the most frequent combination in a DataFrame](https://stackoverflow.com/questions/63229237/finding-the-most-frequent-combination-in-dataframe)
+
+### Known bugs
+
+None yet. If you find any, please file an issue.
