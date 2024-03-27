@@ -132,6 +132,27 @@ def get_user_input(prompt: str, options: list[str]) -> str:
         print("Sorry, I don't understand your input. Please try again!")
 
 
+def get_bool_user_input(prompt: str) -> bool:
+    """
+    Returns a Boolean value based on user input.
+
+    Args:
+        (str) prompt - the prompt to display to the user
+    Returns:
+        (bool) True if the user input is 'yes', False if the user input is 'no' (with tolerance for shorter inputs like 'y' and 'n')
+    """  # noqa
+    while True:
+        response: str = input(prompt).lower()
+
+        if 'yes'.startswith(response):
+            return True
+
+        if 'no'.startswith(response):
+            return False
+
+        print("Sorry, I don't understand your input. Please try again!")
+
+
 def load_data(city: str, month: str, day: str) -> pd.DataFrame:
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -289,9 +310,9 @@ def raw_data(df: pd.DataFrame, batch_size: int) -> None:
         # This check is done at the start of the loop to avoid displaying
         # the prompt when the list has already been exhausted.
         if not first_display:
-            if input(
+            if not get_bool_user_input(
                 '\nSee more raw data? Enter yes or no.\n'
-            ).lower() != 'yes':
+            ):
                 return
         print(batch)
         first_display = False
@@ -308,13 +329,13 @@ def main() -> None:
             station_stats(df)
             trip_duration_stats(df)
             user_stats(df)
-            if input('\nSee raw data? Enter yes or no.\n').lower() == 'yes':
+            if get_bool_user_input('\nSee raw data? Enter yes or no.\n'):
                 print()
                 raw_data(df, 5)
 
-            if input(
+            if not get_bool_user_input(
                 '\nWould you like to restart? Enter yes or no.\n'
-            ).lower() != 'yes':
+            ):
                 print('Bye!')
                 break
     except (KeyboardInterrupt, EOFError):
