@@ -2,15 +2,15 @@
 
 ### Date created
 
-Include the date you created this project and README file.
+2024/03/28
 
 ### Project Title
 
-Replace the Project Title
+US Bike Share Data Exploration
 
 ### Description
 
-Describe what your project is about and what it does
+An interactive environment where you can view bike share data insights for a few US cities. Data can also be refined by time range.
 
 ### Files used
 
