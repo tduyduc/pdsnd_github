@@ -139,15 +139,15 @@ def get_bool_user_input(prompt: str) -> bool:
     Args:
         (str) prompt - the prompt to display to the user
     Returns:
-        (bool) True if the user input is 'yes', False if the user input is 'no'
-    """
+        (bool) True if the user input is 'yes', False if the user input is 'no' (with tolerance for shorter inputs like 'y' and 'n')
+    """  # noqa
     while True:
         response: str = input(prompt).lower()
 
-        if response == 'yes':
+        if 'yes'.startswith(response):
             return True
 
-        if response == 'no':
+        if 'no'.startswith(response):
             return False
 
         print("Sorry, I don't understand your input. Please try again!")
