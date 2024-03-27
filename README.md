@@ -8,6 +8,16 @@
 
 An interactive environment where you can view bike share data insights for a few US cities. Data can also be refined by time range.
 
+### Environment
+
+This project requires Python 3.10 or later. Pandas is also required, and can be installed via:
+
+```shell
+pip install pandas
+```
+
+Data files are also necessary (see _Files used_ section below).
+
 ### Files used
 
 - `bikeshare.py`
